@@ -3,15 +3,16 @@ class Solution {
     long reversed = 0;
     
     while (x != 0) {
-        reversed = reversed * 10 + (x % 10);
-        x /= 10;
+        int lastdigit = x % 10;
+        x = x/10;
+        reversed = (reversed * 10) + lastdigit;
     }
     
     if (reversed > Integer.MAX_VALUE || reversed < Integer.MIN_VALUE) {
         return 0;
     }
     
-    return (int) reversed;
+    return (int)reversed;
 }
 
 }
